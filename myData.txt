@@ -1,0 +1,4 @@
+myData.bak contains a dictionary with cat names.
+We can use shelve module to create a binary file.
+ Also, values are stored in the dictionary format. 
+ Data from Python programs are stored inbinary format.

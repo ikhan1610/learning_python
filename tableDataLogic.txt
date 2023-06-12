@@ -1,0 +1,42 @@
+tableData = [['apples', 'oranges', 'cherries', 'banana'],
+             ['Alice', 'Bob', 'Carol', 'David'],
+             ['dogs', 'cats', 'moose', 'goose']]
+
+colWidths = [0,0,0]
+
+i	j	longestString	colWidths
+0		apples		[0,0,0]
+		
+0	0	oranges		[0,0,0]
+
+0	1	oranges		[0,0,0]
+		
+0	2	oranges		[0,0,0]
+
+0	3	oranges		[8,0,0]
+
+1		Alice			[8,0,0]
+
+1	0	Alice			[8,0,0]
+
+1	1	Alice			[8,0,0]
+
+1	2	Alice 		[8,0,0]
+
+1	3	Alice			[8,5,0]
+
+2		dogs			[8,5,0]
+
+2	0	dogs			[8,5,0]
+
+2	1	moose			[8,5,0]
+
+2	2	moose			[8,5,0]
+
+2	3	moose			[8,5,5]
+
+
+
+
+
+
