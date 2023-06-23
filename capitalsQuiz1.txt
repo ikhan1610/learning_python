@@ -1,0 +1,38 @@
+Name:
+
+Date:
+
+Period:
+
+                    State Capitals Quiz (Form1)
+
+1. What's the capital of Mississippi?
+A. Jackson
+B. Saint Paul
+C. Providence
+D. Austin
+
+2. What's the capital of Louisiana?
+A. Baton Rouge
+B. Boise
+C. Boston
+D. Salt Lake City
+
+3. What's the capital of Rhode Island?
+A. Trenton
+B. Providence
+C. Denver
+D. Raleigh
+
+4. What's the capital of North Carolina?
+A. Raleigh
+B. Montpelier
+C. Topeka
+D. Cheyenne
+
+5. What's the capital of Virginia?
+A. Juneau
+B. Austin
+C. Richmond
+D. Lincoln
+
