@@ -16,16 +16,13 @@ import os
 
 def removeFoldersFiles(sourceFolder,folderFileSize=100000):
     for folderName,subFolderNames,fileNames in os.walk(sourceFolder):
-        if folderName:
-            print(f'inside {os.path.abspath(folderName)}')
-            for fileName in fileNames:
-                filePath = os.path.join(folderName,fileName)
-                fileSize = os.path.getsize(filePath)
-                if fileSize > folderFileSize:
-                    #print(f'Unwanted File: {os.path.abspath(filePath)}')
-                    print(f'File size of the \"{filePath}\" file : {os.path.getsize(filePath)}')
-        else:
-            print(f'{folderName} does not exists.')
+        print(f'inside {os.path.abspath(folderName)}')
+        for fileName in fileNames:
+            filePath = os.path.join(folderName,fileName)
+            fileSize = os.path.getsize(filePath)
+            if fileSize > folderFileSize:
+                #print(f'Unwanted File: {os.path.abspath(filePath)}')
+                print(f'File size of the \"{filePath}\" file : {os.path.getsize(filePath)}')
 
 
 folder = input('Enter folder name to be cleaned up: ')
