@@ -16,15 +16,17 @@ def fillGapsInFileNames(folder,filePrefix,extension):
         print(f'All files in the folder: {fileNames}')
         totalNumberOfFiles = len(fileNames)
         counter = 1 
+        matchingPatterns = 0
+        joinedFilesNames = ''.join(fileNames)
         while counter < totalNumberOfFiles:
-            for fileName in fileNames:
-                filePrefixRegex = re.compile(filePrefix + '00' + str(numOfFilesWithPrefix) +extension)
-                print(f'file prefix regex: {filePrefixRegex}')
-                matchingObject = filePrefixRegex.search(fileName)
-                if matchingObject:
-                    print(f'Pattern matching file: {matchingObject}')
-                numOfFilesWithPrefix += 1
-    print(f'Total number of files matching pattern: {numOfFilesWithPrefix}')
+            filePrefixRegex = re.compile(filePrefix + '00' + str(counter) + extension)
+            #print(f'file prefix regex: {filePrefixRegex}')
+            matchingObject = filePrefixRegex.findall(joinedFilesNames)
+            if matchingObject:
+                print(f'Pattern matching file: {matchingObject[0]}')
+                matchingPatterns += 1
+            counter += 1
+    #print(f'Total number of files matching pattern: {counter}')
     #countFileWithPrefix = files.len()
             
     #filePrefixRegex = re.compile(filePrefix + '.txt')
