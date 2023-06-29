@@ -26,23 +26,9 @@ def fillGapsInFileNames(folder,filePrefix,extension):
                 print(f'Pattern matching file: {matchingObject[0]}')
                 matchingPatterns += 1
             counter += 1
-    #print(f'Total number of files matching pattern: {counter}')
-    #countFileWithPrefix = files.len()
-            
-    #filePrefixRegex = re.compile(filePrefix + '.txt')
+    
 
-    # todo: Walk through the folder and find out files with the given prefix
-    '''for folderName,subFolderNames,fileNames in os.walk(folder):
-        fileNamesArray = []
-        for fileName in fileNames:
-            if filePrefixRegex in fileName:
-                print(filename)
-                #fileNamesArray.append(fileName)
-    for file in fileNamesArray:
-        print(file)'''
-
-#folder = input("Enter name of the folder: ")
-#pattern = input("Enter the prefix: ")
+   
 if __name__ == '__main__':
     fillGapsInFileNames('testFolder','spam','.txt')
 
