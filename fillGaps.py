@@ -12,23 +12,22 @@ Have the program rename all the later files to close this gap.
 import os,re
 def fillGapsInFileNames(folder,filePrefix,extension):
     #todo: Write a pattern and identify files with given prefix
-    for _,_,fileNames in os.walk(folder):
-        print(f'All files in the folder: {fileNames}')
-        totalNumberOfFiles = len(fileNames)
-        counter = 1 
-        matchingPatterns = 0
-        joinedFilesNames = ''.join(fileNames)
-        while counter < totalNumberOfFiles:
-            filePrefixRegex = re.compile(filePrefix + '00' + str(counter) + extension)
-            #print(f'file prefix regex: {filePrefixRegex}')
-            matchingObject = filePrefixRegex.findall(joinedFilesNames)
-            if matchingObject:
-                print(f'Pattern matching file: {matchingObject[0]}')
-                matchingPatterns += 1
-            counter += 1
-    
+    fileNames =  os.listdir(folder)
+    filePrefixRegex = re.compile(rf'^{re.escape(filePrefix)}(\d+)(\.\w+)$')
+    print(f'All files in the folder: {fileNames}')
+    matchingFileNames = [file for file in fileNames if filePrefixRegex.search(file) ]
+    numRegex = re.compile(r'(\d+)')
+    matchingFileNames = sorted(matchingFileNames, key= lambda x: numRegex.search(x).group())
+    for index,file in enumerate(matchingFileNames):
+        numberInTheFileName = int(numRegex.search(file).group())
+        expectedNumber = index + 1
+        newFileName = filePrefix + '00' + str(expectedNumber) + extension
+        if expectedNumber != numberInTheFileName:
+            newPath = os.path.join(folder,newFileName)
+            oldPath = os.path.join(folder,file)
+            os.rename(oldPath,newPath)
+            print(f'Renamed "{file}" to "{newFileName}"') 
 
-   
 if __name__ == '__main__':
     fillGapsInFileNames('testFolder','spam','.txt')
 
